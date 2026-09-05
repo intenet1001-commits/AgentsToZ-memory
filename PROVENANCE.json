@@ -1,0 +1,65 @@
+{
+  "agentVersion": 19,
+  "sdkVersion": "0.1.0",
+  "extractedAt": "2026-09-06",
+  "upstreamProduct": "https://github.com/intenet1001-commits/AgentsToZ-public",
+  "sourceState": "Selected local source snapshot; output guard includes not-yet-shipped improvements. Hashes, not the app release number, identify this extraction.",
+  "files": [
+    {
+      "upstreamFile": "src/projectMemoryRecall.ts",
+      "upstreamSha256": "b7d8800952afc7c7d03551855f3e7fe85071cf304ebff2e4904ab063f1d76f8c",
+      "distributedFile": "src/core/projectMemoryRecall.ts",
+      "distributedSha256": "f32be21575c322def94b94f7a009756090c26d6ef63748f630f06fbce9b67773",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/projectMemoryDocument.ts",
+      "upstreamSha256": "8cd524e20cb7732ae6a9f0b5db609dc38110545eb55ab728dc5fdfb7c4ad9668",
+      "distributedFile": "src/core/projectMemoryDocument.ts",
+      "distributedSha256": "d4c4a98e42e18a3dd57e96e832c5c495b68667ea48ea8ca25660865b031f7684",
+      "adaptation": "Match Markdown closing fence marker and length; preserve byte-roundtrip"
+    },
+    {
+      "upstreamFile": "src/projectMemoryVersion.ts",
+      "upstreamSha256": "898332a82877959a09330dc38513fc05efef342c27e8b6f2b9d7f49e8c23881f",
+      "distributedFile": "src/core/projectMemoryVersion.ts",
+      "distributedSha256": "898332a82877959a09330dc38513fc05efef342c27e8b6f2b9d7f49e8c23881f",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/projectMemoryOutputGuard.ts",
+      "upstreamSha256": "0da27d99c2540eb7b2f9e635bfe1ba1e9a281025bfc897cc690c780f5a5d8723",
+      "distributedFile": "src/core/projectMemoryOutputGuard.ts",
+      "distributedSha256": "447165d4ce1a3730266d9d4e2c7308f4de8c95d48ab337b792a47291214714ef",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/whatISaidRedaction.ts",
+      "upstreamSha256": "4b0cefc3540b52d45feced6ec97532cb5c62f1d7762b32610165e8c9b4e13828",
+      "distributedFile": "src/core/whatISaidRedaction.ts",
+      "distributedSha256": "4b0cefc3540b52d45feced6ec97532cb5c62f1d7762b32610165e8c9b4e13828",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/agentOutputStyle.ts",
+      "upstreamSha256": "17bcd6a27f207b954d3d3924a0f2c5c8b5e83c9a378b656ae6bbd2ca41aba130",
+      "distributedFile": "src/core/agentOutputStyle.ts",
+      "distributedSha256": "c26e2322d1060a6907239f8c40601febe51fdeec585484f6e1da772f3ad6b561",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/externalMemorySetupPrompts.ts",
+      "upstreamSha256": "80e8c1dc335964b6a5ef309e50870c6302626881cce390dcad8ccb48d13cb607",
+      "distributedFile": "src/core/externalMemorySetupPrompts.ts",
+      "distributedSha256": "fbcb06976a9d1b582bc3f337607f3cbf600bb042b8871944a4ebaa38c5c5dac8",
+      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/projectMemoryFeedback.ts",
+      "upstreamSha256": "e8254e877889a55bf2701d3e352944c6a65270f1f85a0c6017ffa8aa29f64e60",
+      "distributedFile": "src/core/projectMemoryFeedback.ts",
+      "distributedSha256": "a5f7bd27c1faf60025c0a39175549c703ef863981ce10e89f8521ecc0684f131",
+      "adaptation": "Only scope-key and promotion-state pure helpers; no persistence"
+    }
+  ]
+}

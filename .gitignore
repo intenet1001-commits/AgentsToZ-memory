@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tgz
+.agent-memory/
+.agent-memory-sdk/
+.env*
+.DS_Store

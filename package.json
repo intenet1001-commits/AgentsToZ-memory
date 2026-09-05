@@ -1,0 +1,21 @@
+{
+  "name": "@agentstoz/memory",
+  "version": "0.1.0",
+  "description": "Local-first, project-scoped memory primitives and a versioned standalone agent setup prompt from AgentsToZ.",
+  "type": "module",
+  "license": "MIT",
+  "author": "CS & Company",
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "https://github.com/intenet1001-commits/AgentsToZ-memory.git" },
+  "homepage": "https://github.com/intenet1001-commits/AgentsToZ-memory",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "bin": { "agentstoz-memory": "./dist/cli.js" },
+  "files": ["dist", "README.md", "LICENSE", "NOTICE.md", "PROVENANCE.json", "docs", "examples"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check:package": "node scripts/check-package.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": { "@types/node": "22.18.0", "typescript": "5.9.2" }
+}
