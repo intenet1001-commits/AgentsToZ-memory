@@ -1,65 +1,93 @@
 {
-  "agentVersion": 19,
-  "sdkVersion": "0.1.0",
-  "extractedAt": "2026-09-06",
+  "agentVersion": 22,
+  "sdkVersion": "0.2.0",
+  "extractedAt": "2026-09-27",
   "upstreamProduct": "https://github.com/intenet1001-commits/AgentsToZ-public",
-  "sourceState": "Selected local source snapshot; output guard includes not-yet-shipped improvements. Hashes, not the app release number, identify this extraction.",
+  "sourceState": "Selected source files from the app at agent version 22 (app commit recorded in the release notes). Hashes, not the app release number, identify this extraction.",
   "files": [
     {
       "upstreamFile": "src/projectMemoryRecall.ts",
       "upstreamSha256": "b7d8800952afc7c7d03551855f3e7fe85071cf304ebff2e4904ab063f1d76f8c",
       "distributedFile": "src/core/projectMemoryRecall.ts",
       "distributedSha256": "f32be21575c322def94b94f7a009756090c26d6ef63748f630f06fbce9b67773",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "adaptation": "Node ESM `.js` import suffixes; extracted source otherwise preserved"
     },
     {
       "upstreamFile": "src/projectMemoryDocument.ts",
-      "upstreamSha256": "8cd524e20cb7732ae6a9f0b5db609dc38110545eb55ab728dc5fdfb7c4ad9668",
+      "upstreamSha256": "f1731af8decc8de5b33cd4a70c8882d8cd710d600c259f1a1704255f92693934",
       "distributedFile": "src/core/projectMemoryDocument.ts",
-      "distributedSha256": "d4c4a98e42e18a3dd57e96e832c5c495b68667ea48ea8ca25660865b031f7684",
-      "adaptation": "Match Markdown closing fence marker and length; preserve byte-roundtrip"
+      "distributedSha256": "f1731af8decc8de5b33cd4a70c8882d8cd710d600c259f1a1704255f92693934",
+      "adaptation": "None; byte-identical to upstream"
     },
     {
       "upstreamFile": "src/projectMemoryVersion.ts",
-      "upstreamSha256": "898332a82877959a09330dc38513fc05efef342c27e8b6f2b9d7f49e8c23881f",
+      "upstreamSha256": "6a8ee853a3d1b7ec89e9ae245b39a77766944c8d4dd2d51c1694cc144c87edbe",
       "distributedFile": "src/core/projectMemoryVersion.ts",
-      "distributedSha256": "898332a82877959a09330dc38513fc05efef342c27e8b6f2b9d7f49e8c23881f",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "distributedSha256": "6a8ee853a3d1b7ec89e9ae245b39a77766944c8d4dd2d51c1694cc144c87edbe",
+      "adaptation": "None; byte-identical to upstream"
     },
     {
       "upstreamFile": "src/projectMemoryOutputGuard.ts",
       "upstreamSha256": "0da27d99c2540eb7b2f9e635bfe1ba1e9a281025bfc897cc690c780f5a5d8723",
       "distributedFile": "src/core/projectMemoryOutputGuard.ts",
       "distributedSha256": "447165d4ce1a3730266d9d4e2c7308f4de8c95d48ab337b792a47291214714ef",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "adaptation": "Node ESM `.js` import suffixes; extracted source otherwise preserved"
     },
     {
       "upstreamFile": "src/whatISaidRedaction.ts",
       "upstreamSha256": "4b0cefc3540b52d45feced6ec97532cb5c62f1d7762b32610165e8c9b4e13828",
       "distributedFile": "src/core/whatISaidRedaction.ts",
       "distributedSha256": "4b0cefc3540b52d45feced6ec97532cb5c62f1d7762b32610165e8c9b4e13828",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "adaptation": "None; byte-identical to upstream"
     },
     {
       "upstreamFile": "src/agentOutputStyle.ts",
-      "upstreamSha256": "17bcd6a27f207b954d3d3924a0f2c5c8b5e83c9a378b656ae6bbd2ca41aba130",
+      "upstreamSha256": "71ca5cdcdc1a9909424cb165661dd273bd5995b6267566d4d642fdb080a4233b",
       "distributedFile": "src/core/agentOutputStyle.ts",
-      "distributedSha256": "c26e2322d1060a6907239f8c40601febe51fdeec585484f6e1da772f3ad6b561",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "distributedSha256": "88b5d26ade516956d3e0b5fcae3e8c59633a72470691ff267c5701e0daa503db",
+      "adaptation": "Node ESM `.js` import suffixes; extracted source otherwise preserved"
     },
     {
       "upstreamFile": "src/externalMemorySetupPrompts.ts",
-      "upstreamSha256": "80e8c1dc335964b6a5ef309e50870c6302626881cce390dcad8ccb48d13cb607",
+      "upstreamSha256": "f4760299cf7f8ec35a05e4c9207e66ad61c26e22fad9388559340398f1b3fa03",
       "distributedFile": "src/core/externalMemorySetupPrompts.ts",
-      "distributedSha256": "fbcb06976a9d1b582bc3f337607f3cbf600bb042b8871944a4ebaa38c5c5dac8",
-      "adaptation": "Node ESM import suffixes; extracted source otherwise preserved"
+      "distributedSha256": "b959b01ee1e1526071e7feb81e477af2815e7a806d4cf4b3323e78d05899db5d",
+      "adaptation": "Node ESM `.js` import suffixes; extracted source otherwise preserved"
     },
     {
       "upstreamFile": "src/projectMemoryFeedback.ts",
-      "upstreamSha256": "e8254e877889a55bf2701d3e352944c6a65270f1f85a0c6017ffa8aa29f64e60",
+      "upstreamSha256": "bb6377906a98acdb72e5a0f6c580b4c23060363c9637d8cb3d59cb5857f450f4",
       "distributedFile": "src/core/projectMemoryFeedback.ts",
-      "distributedSha256": "a5f7bd27c1faf60025c0a39175549c703ef863981ce10e89f8521ecc0684f131",
-      "adaptation": "Only scope-key and promotion-state pure helpers; no persistence"
+      "distributedSha256": "2b9e28011af121fe77fc3a5ad3eb5f2a7228684d42ae2986f7f6bd426c45be5b",
+      "adaptation": "Node ESM `.js` import suffixes; extracted source otherwise preserved"
+    },
+    {
+      "upstreamFile": "src/projectMemoryJournalCache.ts",
+      "upstreamSha256": "fd0ed96b49abc69284a583e599969adaf612ba6d6705164b3d7692a45150cab0",
+      "distributedFile": "src/core/projectMemoryJournalCache.ts",
+      "distributedSha256": "fd0ed96b49abc69284a583e599969adaf612ba6d6705164b3d7692a45150cab0",
+      "adaptation": "None; byte-identical to upstream"
+    },
+    {
+      "upstreamFile": "src/projectMemoryDurability.ts",
+      "upstreamSha256": "16a452dfff7124e8d7c774ed7080500207a913b206ebb438912a1b65e0174d0f",
+      "distributedFile": "src/core/projectMemoryDurability.ts",
+      "distributedSha256": "16a452dfff7124e8d7c774ed7080500207a913b206ebb438912a1b65e0174d0f",
+      "adaptation": "None; byte-identical to upstream"
+    },
+    {
+      "upstreamFile": "src/modelEffortAdvicePolicy.ts",
+      "upstreamSha256": "9b654d928f1d6ad64f1ad3fbaad1a80a45409cd4f9f9504447c2f2980ea64f51",
+      "distributedFile": "src/core/modelEffortAdvicePolicy.ts",
+      "distributedSha256": "9b654d928f1d6ad64f1ad3fbaad1a80a45409cd4f9f9504447c2f2980ea64f51",
+      "adaptation": "None; byte-identical to upstream"
+    },
+    {
+      "upstreamFile": "src/projectTesterAutoSetupPolicy.ts",
+      "upstreamSha256": "64d20422f7eb1e4b55456c43e3436de070793fcfefb21122a3a6475c2ba6fa59",
+      "distributedFile": "src/core/projectTesterAutoSetupPolicy.ts",
+      "distributedSha256": "64d20422f7eb1e4b55456c43e3436de070793fcfefb21122a3a6475c2ba6fa59",
+      "adaptation": "None; byte-identical to upstream"
     }
   ]
 }

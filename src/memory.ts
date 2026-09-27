@@ -5,7 +5,7 @@ import { CURRENT_PROJECT_MEMORY_VERSION } from './core/projectMemoryVersion.js';
 import { inspectProjectMemoryOutputSafety } from './core/projectMemoryOutputGuard.js';
 import { inspectProjectMemoryQuality, parseProjectMemoryEntries, recallProjectMemoryEntries, stabilizeProjectMemoryEntryIds } from './core/projectMemoryRecall.js';
 
-export const SDK_VERSION = '0.1.0';
+export const SDK_VERSION = '0.2.0';
 export const SCHEMA_VERSION = 1;
 export const STORE_DIRECTORY = '.agent-memory-sdk';
 export const MAX_MEMORY_BYTES = 256_000;

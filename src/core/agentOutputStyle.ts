@@ -1,4 +1,6 @@
 import { memoryAgentVersionMarker } from './projectMemoryVersion.js';
+import { MODEL_EFFORT_ADVICE_POLICY } from './modelEffortAdvicePolicy.js';
+import { PROJECT_TESTER_AUTO_SETUP_POLICY } from './projectTesterAutoSetupPolicy.js';
 
 export const AGENTSTOZ_OUTPUT_STYLE_START = '<!-- AgentsToZ shared-output-style:start -->';
 export const AGENTSTOZ_OUTPUT_STYLE_END = '<!-- AgentsToZ shared-output-style:end -->';
@@ -19,6 +21,10 @@ export function sharedOutputStyleBlock(): string {
   return `${AGENTSTOZ_OUTPUT_STYLE_START}
 ${memoryAgentVersionMarker()}
 ${SHARED_OUTPUT_STYLE_PROMPT}
+
+${MODEL_EFFORT_ADVICE_POLICY.trimEnd()}
+
+${PROJECT_TESTER_AUTO_SETUP_POLICY}
 ${AGENTSTOZ_OUTPUT_STYLE_END}`;
 }
 

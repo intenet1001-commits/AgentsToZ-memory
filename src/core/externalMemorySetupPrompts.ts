@@ -8,6 +8,7 @@
  */
 import { CURRENT_PROJECT_MEMORY_VERSION, standaloneMemoryVersionMarker } from './projectMemoryVersion.js';
 import { SHARED_OUTPUT_STYLE_PROMPT } from './agentOutputStyle.js';
+import { MODEL_EFFORT_ADVICE_POLICY } from './modelEffortAdvicePolicy.js';
 
 // 버전은 '프로젝트 장기기억' 기능 전체가 하나로 쓴다 (src/projectMemoryVersion.ts).
 // 앱이 설치하는 스킬·훅과 이 복사 프롬프트가 같은 번호를 공유하므로, 기능을 개선해 번호를
@@ -96,9 +97,12 @@ const standaloneInitPrompt = [
   '4. 에이전트가 이 기억을 실제로 읽고 같은 응답 형식을 쓰게 만든다.',
   '   AGENTS.md와 CLAUDE.md 모두에 짧은 장기기억 절을 추가한다: 중요한 작업 전에 .agent-memory/CORE.md 색인을 읽고 관련 노트만 열 것,',
   '   사용자가 세션을 기억해 달라고 하면 `/remember-session` 절차를 따를 것. 이미 같은 절이 있으면 새로 만들지 말고 그 안을 갱신한다.',
+  '   아래 모델·추론 권유 규칙도 프로젝트 지침의 장기기억 절에 넣는다. 기존 작업 문맥만 사용하며 추가 AI 호출·자동 모델 변경은 하지 않는다.',
+  MODEL_EFFORT_ADVICE_POLICY,
   '   아래 공통 응답 규칙을 AGENTS.md와 CLAUDE.md에 표시 마커와 함께 추가하고, Antigravity용',
   '   .agents/rules/agentstoz-output-style.md에도 같은 원문을 저장한다. 기존 사용자 지침은 보존하고 같은 마커 블록만 멱등 교체한다.',
   '   Hermes가 설치된 환경이면 $HERMES_HOME/SOUL.md(기본 ~/.hermes/SOUL.md)에도 같은 마커 블록을 추가하되 기존 persona는 보존한다.',
+  '   위 모델·추론 권유 규칙도 Antigravity의 .agents/rules/agentstoz-output-style.md와 Hermes의 SOUL.md에 함께 넣는다. 언어 규칙만 복사하여 계획·단계 전환 추천이 빠지지 않게 한다.',
   '   시작 마커: <!-- AgentsToZ shared-output-style:start -->',
   SHARED_OUTPUT_STYLE_PROMPT,
   '   끝 마커: <!-- AgentsToZ shared-output-style:end -->',

@@ -1,6 +1,6 @@
 {
   "name": "@agentstoz/memory",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local-first, project-scoped memory primitives and a versioned standalone agent setup prompt from AgentsToZ.",
   "type": "module",
   "license": "MIT",

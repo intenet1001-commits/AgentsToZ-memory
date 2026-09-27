@@ -6,7 +6,8 @@
  * asking a model to count its own output bytes — which failed three runs in a
  * row (43,290 → 43,799 against a 42,000 budget). Decomposed, the always-loaded
  * file is an index of titles and a save can rewrite one note instead of all of
- * them, so "how big is the memory" stops being a per-run cost at all.
+ * them. The current transaction still discovers/compares the complete document;
+ * a per-note write is not a claim that every read or save is O(changed bytes).
  *
  * The split is a pure partition of the original string: every byte lands in
  * exactly one part, in order. `composeMemoryDocument(splitMemoryDocument(x))`
@@ -46,8 +47,12 @@ export const MEMORY_NOTE_BUDGET_BYTES = 12_000;
 
 const HEADER_PART_FILE = "00-header.md";
 
+/** Line offsets of `## ` headings, ignoring fenced code blocks. */
 type DocumentFence = { marker: string; length: number } | null;
 
+/** CommonMark fences: a block closes only on the same marker with at least the opening length
+ *  and nothing after it; a backtick info string may not contain a backtick. A plain toggle split
+ *  notes at a `## ` line inside a ````md block that shows a ``` example. */
 function stepFence(line: string, current: DocumentFence): { fence: DocumentFence; fenceLine: boolean } {
   const match = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
   if (!match) return { fence: current, fenceLine: false };
@@ -60,7 +65,6 @@ function stepFence(line: string, current: DocumentFence): { fence: DocumentFence
   return { fence: closes ? null : current, fenceLine: true };
 }
 
-/** Line offsets of `## ` headings, ignoring fenced code blocks. */
 function headingOffsets(content: string): number[] {
   const offsets: number[] = [];
   let fenced: DocumentFence = null;
@@ -120,7 +124,12 @@ export function composeMemoryDocument(parts: string[]): string {
 
 /** ASCII slug for a section title; non-Latin titles fall back to their position. */
 export function memoryNoteFileName(title: string | null, index: number, taken: Set<string>): string {
-  if (title === null) return HEADER_PART_FILE;
+  if (title === null) {
+    let file = HEADER_PART_FILE, suffix = 2;
+    while (taken.has(file)) file = `00-header-${suffix++}.md`;
+    taken.add(file);
+    return file;
+  }
   const slug = title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -138,15 +147,25 @@ export function memoryNoteFileName(title: string | null, index: number, taken: S
   return file;
 }
 
-export function buildMemoryNoteManifest(sections: MemoryDocumentSection[]): {
+export function buildMemoryNoteManifest(sections: MemoryDocumentSection[], previous?: MemoryNoteManifest | null): {
   manifest: MemoryNoteManifest;
   files: Array<{ file: string; text: string }>;
 } {
+  // Keep existing names when a section is inserted or reordered. Duplicate
+  // section titles retain their previous occurrence order; text is never merged.
+  const prior = new Map<string | null, string[]>();
   const taken = new Set<string>();
+  for (const part of previous?.parts ?? []) {
+    if (!/^[^/\\\x00]+\.md$/u.test(part.file) || taken.has(part.file)) continue;
+    taken.add(part.file);
+    const names = prior.get(part.title) ?? [];
+    names.push(part.file);
+    prior.set(part.title, names);
+  }
   const parts: MemoryNotePart[] = [];
   const files: Array<{ file: string; text: string }> = [];
   sections.forEach((section, index) => {
-    const file = memoryNoteFileName(section.title, index, taken);
+    const file = prior.get(section.title)?.shift() ?? memoryNoteFileName(section.title, index, taken);
     parts.push({
       file,
       title: section.title,

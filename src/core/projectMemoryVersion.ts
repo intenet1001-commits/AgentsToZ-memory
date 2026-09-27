@@ -26,7 +26,13 @@
 // /Applications 설치본을 백그라운드에서 한 번 열고 bounded readiness만 기다린다.
 // v19: Claude·Codex·Antigravity·Hermes가 같은 영어 번역 우선 출력 규칙을 읽도록
 // 각 도구의 정식 지침 표면을 생성·멱등 갱신한다.
-export const CURRENT_PROJECT_MEMORY_VERSION = 19;
+// v20: 현재 설정의 출처와 작업 증거에 기반한 모델·추론 권유를 생성 스킬과
+// 앱 없는 환경용 지침에 공유한다. 자동 변경이나 추가 AI 호출은 하지 않는다.
+// v21: 계획 시작·단계 전환의 에포트 추천을 네 에이전트의 상시 지침에도 전달한다.
+// 지원 설정은 실제 agent/provider/surface별로 확인하며 동일 추천을 매 턴 반복하지 않는다.
+// v22: 네 에이전트의 상시 지침에 «테스트 요청 시 프로젝트 테스터를 로컬 API로 설치·갱신»
+// 규칙을 추가한다(/api/project-tester/ensure). 앱에서 따로 설정을 누르지 않아도 자연어로 시작된다.
+export const CURRENT_PROJECT_MEMORY_VERSION = 22;
 
 // 앱이 설치한 파일에 박히는 마커. 앱을 아는 프로젝트에서만 쓴다.
 export const memoryAgentVersionMarker = (version = CURRENT_PROJECT_MEMORY_VERSION) =>
