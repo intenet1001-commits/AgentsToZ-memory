@@ -2,13 +2,13 @@
 
 Local-first, project-scoped memory for agents. Use the TypeScript SDK in your own platform, or give an agent the standalone setup prompt. No AgentsToZ app, account, database server or subscription is required by this package. Model and hosting costs remain yours when you connect an external provider.
 
-**SDK v0.2.0 · extracted agent lineage v22 · MIT · Node.js 22+ · zero runtime dependencies**
+**SDK v0.3.0 · extracted agent lineage v23 · MIT · Node.js 22+ · zero runtime dependencies**
 
 이 저장소는 [AgentsToZ 앱 공개 배포 저장소](https://github.com/intenet1001-commits/AgentsToZ-public)에서 장기기억 기능을 독립적으로 활용하려는 개발자를 위한 첫 공개 SDK입니다. AgentsToZ 앱은 프로젝트·에이전트·기억을 한 화면에서 관리하는 통합 환경이고, 이 SDK는 다른 플랫폼에서 기억 기능을 직접 연결할 때 사용합니다. 앱 전체를 복제한 제품은 아닙니다.
 
 - 앱: [AgentsToZ-public](https://github.com/intenet1001-commits/AgentsToZ-public)
 - 독립 SDK: [AgentsToZ-memory](https://github.com/intenet1001-commits/AgentsToZ-memory)
-- 설계 에세이: [기억을 소유한다는 것](docs/essay.ko.md) · 2026-09-24 개정
+- 설계 에세이: [기억을 소유한다는 것](docs/essay.ko.md) · 2026-10-08 개정
 - 앱과 SDK의 현재 범위: [구현 근거와 남은 검증](docs/implementation-status.ko.md)
 - 기술 비교 근거: [공식 문서 비교 노트](docs/comparison.ko.md)
 
@@ -17,7 +17,7 @@ Local-first, project-scoped memory for agents. Use the TypeScript SDK in your ow
 배포 채널은 **GitHub Releases의 npm 호환 tarball**입니다. npm 레지스트리에 등록됐다고 가정하여 `npm install @agentstoz/memory`를 실행하지 마세요.
 
 ```sh
-npm install --save-exact https://github.com/intenet1001-commits/AgentsToZ-memory/releases/download/v0.2.0/agentstoz-memory-0.2.0.tgz
+npm install --save-exact https://github.com/intenet1001-commits/AgentsToZ-memory/releases/download/v0.3.0/agentstoz-memory-0.3.0.tgz
 ```
 
 `package-lock.json`을 보관하세요. [릴리스](https://github.com/intenet1001-commits/AgentsToZ-memory/releases)에는 SHA-256 체크섬과 변경 내역을 함께 제공합니다. 버전을 바꾸기 전 확인할 사항은 [업그레이드 가이드](docs/upgrading.md)에 있습니다. 아직 0.x이므로 API를 안정화하는 과정이며, 모든 새 버전이 모든 작업에서 더 높은 성능을 낸다는 뜻은 아닙니다.

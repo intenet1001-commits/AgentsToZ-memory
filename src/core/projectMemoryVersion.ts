@@ -32,7 +32,9 @@
 // 지원 설정은 실제 agent/provider/surface별로 확인하며 동일 추천을 매 턴 반복하지 않는다.
 // v22: 네 에이전트의 상시 지침에 «테스트 요청 시 프로젝트 테스터를 로컬 API로 설치·갱신»
 // 규칙을 추가한다(/api/project-tester/ensure). 앱에서 따로 설정을 누르지 않아도 자연어로 시작된다.
-export const CURRENT_PROJECT_MEMORY_VERSION = 22;
+// v23: 테스트 파일이 이미 있어도 세션당 한 번 공통 레이어를 조정하고, 앱 제공 공통 버전과
+// 프로젝트 Git이 소유하는 앱별 검사 레이어를 분리해 보존하도록 규칙을 명확히 한다.
+export const CURRENT_PROJECT_MEMORY_VERSION = 23;
 
 // 앱이 설치한 파일에 박히는 마커. 앱을 아는 프로젝트에서만 쓴다.
 export const memoryAgentVersionMarker = (version = CURRENT_PROJECT_MEMORY_VERSION) =>

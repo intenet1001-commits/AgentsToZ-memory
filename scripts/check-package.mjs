@@ -25,9 +25,9 @@ try {
     const memory = new ProjectMemory(process.cwd());
     const first = memory.initialize('## Decisions\\n### Database\\nSQLite supports offline work.');
     assert.equal(memory.recall('SQLite').length, 1);
-    assert.equal(AGENT_VERSION, 22);
-    assert.equal(SDK_VERSION, '0.2.0');
-    assert.match(buildStandaloneInitPrompt(), /project-memory:22/);
+    assert.equal(AGENT_VERSION, 23);
+    assert.equal(SDK_VERSION, '0.3.0');
+    assert.match(buildStandaloneInitPrompt(), /project-memory:23/);
     assert.equal(memory.upgrade().revision, first.revision);
     console.log('Clean offline consumer: init / recall / upgrade / prompt passed');`;
   const result = execFileSync(process.execPath, ['--input-type=module', '-e', script], { cwd: consumer, encoding: 'utf8' });

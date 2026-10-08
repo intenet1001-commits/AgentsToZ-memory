@@ -31,7 +31,7 @@ test('read does not create a store; init is idempotent and versioned', t => {
   assert.throws(() => memory.load(), hasCode('NOT_INITIALIZED'));
   assert.deepEqual(readdirSync(root), []);
   const initial = memory.initialize(document);
-  assert.equal(initial.agentVersion, 22);
+  assert.equal(initial.agentVersion, 23);
   assert.equal(initial.sdkVersion, SDK_VERSION);
   assert.equal(initial.sequence, 1);
   assert.deepEqual(memory.initialize('different text'), initial);
@@ -142,7 +142,7 @@ test('explicit upgrade preserves memory bytes, IDs and history', t => {
   assert.deepEqual(memory.upgrade(), upgraded);
 });
 
-for (const change of [{ schemaVersion: 2 }, { agentVersion: 23 }, { sdkVersion: '0.3.0' }]) {
+for (const change of [{ schemaVersion: 2 }, { agentVersion: 24 }, { sdkVersion: '0.4.0' }]) {
   test(`future version ${JSON.stringify(change)} blocks load, init and upgrade`, t => {
     const root = fixture(t), memory = new ProjectMemory(root);
     memory.initialize(document); rewriteVersion(root, change);
@@ -222,7 +222,7 @@ test('two independent processes cannot both commit from the same revision', asyn
 test('CLI prompt, init, recall, errors and upgrade work without the app', t => {
   const root = fixture(t), cli = new URL('../dist/cli.js', import.meta.url);
   const run = (...args) => spawnSync(process.execPath, [fileURLToPath(cli), ...args], { encoding: 'utf8' });
-  assert.match(run('setup-prompt').stdout, /project-memory:22/);
+  assert.match(run('setup-prompt').stdout, /project-memory:23/);
   assert.equal(run('init', root).status, 0);
   assert.equal(run('upgrade', root).status, 0);
   assert.equal(run('recall', root, 'missing').stdout.trim(), '[]');
@@ -253,9 +253,9 @@ test('recall is bounded, bilingual, and flags contested evidence', () => {
   assert.equal(recallProjectMemoryEntries(markdown, 'no-such-unique-needle').length, 0);
 });
 
-test('standalone setup prompt is v22 and does not call the app API', () => {
+test('standalone setup prompt is v23 and does not call the app API', () => {
   const prompt = buildStandaloneInitPrompt();
-  assert.match(prompt, /project-memory:22/);
+  assert.match(prompt, /project-memory:23/);
   assert.match(prompt, /memory-entry-id/);
   assert.match(prompt, /English translation:/);
   assert.doesNotMatch(prompt, /127\.0\.0\.1:3001|\/api\/project-memory/);

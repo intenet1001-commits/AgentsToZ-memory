@@ -1,9 +1,9 @@
 {
-  "agentVersion": 22,
-  "sdkVersion": "0.2.0",
-  "extractedAt": "2026-09-27",
+  "agentVersion": 23,
+  "sdkVersion": "0.3.0",
+  "extractedAt": "2026-10-08",
   "upstreamProduct": "https://github.com/intenet1001-commits/AgentsToZ-public",
-  "sourceState": "Selected source files from the app at agent version 22 (app commit recorded in the release notes). Hashes, not the app release number, identify this extraction.",
+  "sourceState": "Selected source files from the app at agent version 23 (app commit recorded in the release notes). Hashes, not the app release number, identify this extraction.",
   "files": [
     {
       "upstreamFile": "src/projectMemoryRecall.ts",
@@ -21,9 +21,9 @@
     },
     {
       "upstreamFile": "src/projectMemoryVersion.ts",
-      "upstreamSha256": "6a8ee853a3d1b7ec89e9ae245b39a77766944c8d4dd2d51c1694cc144c87edbe",
+      "upstreamSha256": "0165e33accbe40797e5ce5cd9c2ce6c9cbdee37605b5631f478af9326143c7bb",
       "distributedFile": "src/core/projectMemoryVersion.ts",
-      "distributedSha256": "6a8ee853a3d1b7ec89e9ae245b39a77766944c8d4dd2d51c1694cc144c87edbe",
+      "distributedSha256": "0165e33accbe40797e5ce5cd9c2ce6c9cbdee37605b5631f478af9326143c7bb",
       "adaptation": "None; byte-identical to upstream"
     },
     {
@@ -84,9 +84,9 @@
     },
     {
       "upstreamFile": "src/projectTesterAutoSetupPolicy.ts",
-      "upstreamSha256": "64d20422f7eb1e4b55456c43e3436de070793fcfefb21122a3a6475c2ba6fa59",
+      "upstreamSha256": "41b0e4d00aaffa88181b2e3167ed9e217782efc90f74da67e889bf36d6f6685e",
       "distributedFile": "src/core/projectTesterAutoSetupPolicy.ts",
-      "distributedSha256": "64d20422f7eb1e4b55456c43e3436de070793fcfefb21122a3a6475c2ba6fa59",
+      "distributedSha256": "41b0e4d00aaffa88181b2e3167ed9e217782efc90f74da67e889bf36d6f6685e",
       "adaptation": "None; byte-identical to upstream"
     }
   ]
